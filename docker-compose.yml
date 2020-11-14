@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    ports:
+      - "25565:25565"
+      - "8123:8123"
+    volumes:
+      - "./minecraft-map:/data"
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      SEED: 4725084288293652062
+      MEMORY: "8G"
+      ENABLE_JMX: "true"
+      USE_AIKAR_FLAGS: "true"
+      PAPER_DOWNLOAD_URL: "https://papermc.io/api/v1/paper/1.16.3/244/download"
+    restart: always

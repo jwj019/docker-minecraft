@@ -1,0 +1,14 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: minecraft-world
+  labels:
+    type: local
+spec:
+  storageClassName: nfs
+  capacity:
+    storage: 110Gi 
+  accessModes:
+  - ReadWriteMany
+  hostPath:
+    path: "/tmp/minecraft-map"
